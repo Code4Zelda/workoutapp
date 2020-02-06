@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["es6"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "baseUrl": "./", // this is for use option below (if you don't use it, ignore)
+    "paths": {
+      // this is for babel module resolver and better integration with it, tsc and IDE (if you don't use it, ignore)
+      "*": ["src/*"],
+      "test/*": ["test/*"]
+    },
+    "resolveJsonModule": true, // only if you import json files in your typescript files
+    "skipLibCheck": true // don't check lib
+  },
+  "exclude": ["node_modules"] // put here another folders that you don't want to compile (in my case, i put "native-base-theme" too)
+}
