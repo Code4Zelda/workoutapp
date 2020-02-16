@@ -2,13 +2,7 @@ import React from 'react';
 import {View, Text, Button} from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
-type HomeScreenNavigationProp = StackNavigationProp<'Home'>;
-
-type Props = {
-  navigation: HomeScreenNavigationProp;
-};
-
-const HomeScreen: HomeScreenNavigationProp = ({navigation}: Props) => {
+const SignInScreen = ({navigation}) => {
   return (
     <View
       style={{
@@ -18,11 +12,11 @@ const HomeScreen: HomeScreenNavigationProp = ({navigation}: Props) => {
       }}>
       <Text>Home Screen</Text>
       <Button
-        title="Go to Profile"
+        title=" to Profile"
         onPress={() => navigation.navigate('Profile')}
       />
     </View>
   );
 };
 
-export default HomeScreen;
+export default SignInScreen;

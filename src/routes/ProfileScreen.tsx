@@ -9,7 +9,7 @@ const ProfileScreen = () => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Text>Home Screen</Text>
+      <Text>Profile Screen</Text>
     </View>
   );
 };
