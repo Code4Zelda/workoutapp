@@ -7,7 +7,7 @@ import {AppRoute} from '../app-routes';
 const Stack = createStackNavigator();
 
 export const AuthNavigator = (): React.ReactElement => (
-  <Stack.Navigator headerMode="none">
+  <Stack.Navigator>
     <Stack.Screen name={AppRoute.SIGN_IN} component={SignInScreen} />
     <Stack.Screen name={AppRoute.SIGN_UP} component={SignUpScreen} />
   </Stack.Navigator>
