@@ -1,22 +1,20 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {ReactNode} from 'react';
 import 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
-import RootStack from './src/navigation/RootStack';
+import AppNavigator from './src/navigation/AppNavigator';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {ApplicationProvider, IconRegistry} from 'react-native-ui-kitten';
+import {EvaIconsPack} from '@ui-kitten/eva-icons';
+import {mapping, light as lightTheme} from '@eva-design/eva';
 
 const App: () => ReactNode = () => {
   return (
     <>
-      <NavigationContainer>
-        <RootStack />
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <ApplicationProvider mapping={mapping} theme={lightTheme}>
+          <IconRegistry icons={EvaIconsPack} />
+          <AppNavigator />
+        </ApplicationProvider>
+      </SafeAreaProvider>
     </>
   );
 };

@@ -2,13 +2,7 @@ import React from 'react';
 import {View, Text, Button} from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
-type HomeScreenNavigationProp = StackNavigationProp<'Home'>;
-
-type Props = {
-  navigation: HomeScreenNavigationProp;
-};
-
-const HomeScreen: HomeScreenNavigationProp = ({navigation}: Props) => {
+const HomeScreen = ({navigation}) => {
   return (
     <View
       style={{
@@ -17,10 +11,7 @@ const HomeScreen: HomeScreenNavigationProp = ({navigation}: Props) => {
         justifyContent: 'center',
       }}>
       <Text>Home Screen</Text>
-      <Button
-        title="Go to Profile"
-        onPress={() => navigation.navigate('Profile')}
-      />
+      <Button title="Signup" onPress={() => navigation.navigate('Signup')} />
     </View>
   );
 };

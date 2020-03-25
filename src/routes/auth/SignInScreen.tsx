@@ -1,8 +1,20 @@
-import React from 'react';
-import {View, Text, Button} from 'react-native';
+import React, {useState} from 'react';
+import {View, Button} from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
+import {Text, withStyles, Input} from 'react-native-ui-kitten';
+import {AppRoute} from '../../navigation/app-routes';
 
-const SignInScreen = ({navigation}) => {
+const SignInScreen = ({navigation}: any) => {
+  const [username, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onChangeUsername = (name: string) => {
+    setUserName(name);
+  };
+
+  const onChangePassword = (word: string) => {
+    setPassword(word);
+  };
   return (
     <View
       style={{
@@ -10,10 +22,12 @@ const SignInScreen = ({navigation}) => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Text>Home Screen</Text>
+      <Input />
+
+      <Text>Sign in </Text>
       <Button
-        title=" to Profile"
-        onPress={() => navigation.navigate('Profile')}
+        title=" Sign Up"
+        onPress={() => navigation.navigate(AppRoute.SIGN_UP)}
       />
     </View>
   );
